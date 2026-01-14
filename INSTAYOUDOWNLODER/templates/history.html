@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <title>Download History</title>
+</head>
+<body>
+
+  <h2>Download History for {{ current_user.username }}</h2>
+
+  {% if downloads %}
+    <ul>
+      {% for item in downloads %}
+        <li>{{ item.title }} - {{ item.url }} - {{ item.date }}</li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No downloads yet.</p>
+  {% endif %}
+
+  <a href="/dashboard">Back to Dashboard</a>
+</body>
+</html>

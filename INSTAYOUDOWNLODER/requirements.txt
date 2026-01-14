@@ -1,0 +1,13 @@
+Flask
+Flask-Login
+Flask-SQLAlchemy
+oauthlib
+requests
+google-auth
+google-auth-oauthlib
+pytube
+
+
+
+
+

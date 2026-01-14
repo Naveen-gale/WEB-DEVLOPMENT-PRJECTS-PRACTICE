@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <title>Dashboard</title>
+</head>
+<body>
+  <h2>Welcome {{ current_user.username }}</h2>
+  <a href="/logout">Logout</a>
+
+  <form method="POST">
+    <input name="video_url" placeholder="Paste YouTube Link" required>
+    <button type="submit">Fetch Info</button>
+  </form>
+
+  
+
+  {% if video_info %}
+    <h3>{{ video_info.title }}</h3>
+    <img src="{{ video_info.thumbnail }}" width="320"><br><br>
+<form method="POST" action="/download">
+  <input type="text" name="video_url" placeholder="Paste YouTube Link" required>
+  <select name="quality">
+    <option value="360p">360p</option>
+    <option value="720p">720p</option>
+  </select>
+  <button type="submit">Download</button>
+</form>
+
+  {% endif %}
+  {% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    {% for category, message in messages %}
+      <p style="color: {% if category == 'success' %}green{% else %}red{% endif %};">
+        {{ message }}
+      </p>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+
+</body>
+</html>

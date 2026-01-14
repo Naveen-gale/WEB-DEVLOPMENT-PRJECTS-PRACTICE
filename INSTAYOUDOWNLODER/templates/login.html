@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Login</title></head>
+<body>
+  <h2>Login</h2>
+  {% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    {% for category, msg in messages %}
+      <p style="color: {% if category == 'success' %}green{% else %}red{% endif %};">
+        {{ msg }}
+      </p>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+
+  <form method="POST">
+    <input name="email" type="email" placeholder="Email"><br>
+    <input name="password" type="password" placeholder="Password"><br>
+    <button type="submit">Login</button>
+  </form>
+</body>
+</html>
