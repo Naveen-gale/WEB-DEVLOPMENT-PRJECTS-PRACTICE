@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  line-height: 1.4;
+  scroll-behavior: smooth;
+}
+
+a{
+    text-decoration :none ;
+}
+
+
+
+a {
+  text-decoration: none;
+}
+
+body {
+  display: flex;
+  gap: 10px;
+}
+
+header {
+  border: 1px solid #ccc;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+}
+
+nav h1{
+    font-size:25px ;
+    font-weight: 6000;
+    padding :10px ;
+    border-bottom :1px solid  #ccc;
+}
+
+nav ul{
+    list-style:none ;
+}
+nav ul li {
+    border-bottom :1px solid  #ccc;
+    padding :10px ;
+    color: #000000;
+}
+
+
+
+
+nav ul li:hover {
+  background: #ccc;
+  transition: 0.1s ease-in-out;
+}
+
+
+/* main section */
+main{
+    padding :50px ;
+    max-width :1200px ;
+    max-hight:1200px;
+}
+
+section {
+    margin-bottom :50px ;
+}
+
+section article {
+    font-size: 20px;
+    display :flex ;
+    flex-direction :column ;
+    gap :30px ;
+}
+
+
+section article ul{
+    margin-left :50px ;
+}
+
+section article ul li{
+    margin-bottom :20px ;
+}
+
+
+section h2{
+    font-size: 24px;
+    font-weight: 500px;
+    padding :10px ;
+    font-size:15px ;
+    border-bottom :1px solid #ccc;
+    margin-bottom :10px ;   
+    
+    
+}
+section  article p{
+    font-size:15px ;
+    line-height :1.4 ;
+}
+
+
+code {
+  display: block;
+  text-align: left;
+  white-space: pre-line;
+  line-height: 2;
+  background-color: #f7f7f7;
+  padding: 15px;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+
+@media(max-width:460){
+    body {
+        flex-direction :column ;
+    }
+    header {
+        height: 200px;
+        overflow :hidden ;
+        overflow-y:scroll;
+    }
+}
